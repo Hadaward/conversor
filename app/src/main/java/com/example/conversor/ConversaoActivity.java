@@ -16,9 +16,9 @@ public class ConversaoActivity extends AppCompatActivity {
     }
 
     public void sendMessage(View view){
-        Intent intent = new Intent(this,Resultado.class);
+        Intent intent = new Intent(ConversaoActivity.this,Resultado.class);
         EditText real = (EditText) findViewById(R.id.realToDolar);
-        realToDolar = Float.valueOf(real.getText().toString())/3.83;
+        realToDolar = Double.valueOf(real.getText().toString())/3.83;
         intent.putExtra("dolar", realToDolar);
         startActivity(intent);
 
