@@ -1,6 +1,10 @@
 <resources>
     <string name="app_name">Conversor</string>
     <string name="string_conversor">Digite o valor a ser convertido:</string>
-    <string name="ti_realToDolar">R$</string>
-    <string name="btn_converter">Converter em Dólar</string>
+    <string name="ti_realToDolar">BRL</string>
+    <string name="ti_dolarToReal">USD</string>
+    <string name="btn_voltar">Voltar</string>
+    <string name="btn_converter">Converter</string>
+    <string name="btn_converterRD">BRL -> USD</string>
+    <string name="btn_converterDR">USD -> BRL</string>
 </resources>

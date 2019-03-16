@@ -3,24 +3,30 @@ package com.example.conversor;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 
-import java.util.Timer;
-import java.util.TimerTask;
+
 
 public class MainActivity extends AppCompatActivity {
+    private static int TEMPO_ESPERA = 6000;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        new Timer().schedule(new TimerTask() {
-            @Override
-            public void run() {
-                finish();
-                Intent intent = new Intent();
-                intent.setClass(MainActivity.this,ConversaoActivity.class);
-                startActivity(intent);
-            }
-        },6000);
+
     }
+
+    public void sendMessage(View view){
+        Intent intent = new Intent(MainActivity.this,ConversaoActivityRD.class);
+        startActivity(intent);
+
+    };
+
+    public void sendMessage2(View view){
+        Intent intent = new Intent(MainActivity.this,ConversaoActivityDR.class);
+        startActivity(intent);
+
+    };
 }
