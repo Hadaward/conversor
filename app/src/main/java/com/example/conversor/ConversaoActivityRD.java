@@ -13,11 +13,7 @@ import java.text.NumberFormat;
 import java.util.Locale;
 
 public class ConversaoActivityRD extends AppCompatActivity {
-    private NumberFormat nf = NumberFormat.getCurrencyInstance(new Locale("en", "US"));
-    private BigDecimal dolarValue = new BigDecimal("3.83");
-
-
-
+    private double dolarValue = 3.83;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,13 +22,13 @@ public class ConversaoActivityRD extends AppCompatActivity {
 
     }
 
-    public void onClick(View view){
+    public void sendMessage(View view){
+        Intent calc = new Intent(ConversaoActivityRD.this,Resultado.class);
         EditText real = findViewById(R.id.realToDolar);
-        String toStr = String.valueOf(real.getText().toString());
-        BigDecimal realToDolar = new BigDecimal(toStr).divide(dolarValue, RoundingMode.UP);
-        String dinheiro = nf.format(realToDolar);
-        TextView resultado = findViewById(R.id.resultado);
-        resultado.setText(dinheiro);
+        Double calculo = Double.valueOf(real.getText().toString())/dolarValue;
+        String dinheiro = "US$"+String.valueOf(calculo);
+        calc.putExtra("calc",dinheiro);
+        startActivity(calc);
     }
 
     public void voltar(View view){
