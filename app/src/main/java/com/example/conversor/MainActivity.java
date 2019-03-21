@@ -22,11 +22,11 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(MainActivity.this,ConversaoActivityRD.class);
         startActivity(intent);
 
-    };
+    }
 
     public void sendMessage2(View view){
         Intent intent = new Intent(MainActivity.this,ConversaoActivityDR.class);
         startActivity(intent);
 
-    };
+    }
 }

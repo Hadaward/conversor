@@ -8,18 +8,13 @@
 
     <Button
         android:id="@+id/button2"
-        android:layout_width="210dp"
+        android:layout_width="0dp"
         android:layout_height="95dp"
-        android:layout_marginStart="122dp"
-        android:layout_marginLeft="122dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="122dp"
-        android:layout_marginRight="122dp"
-        android:onClick="sendMessage"
+        android:layout_marginTop="16dp"
+        android:onClick="onClick"
         android:text="@string/btn_converter"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.447"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/dolarToReal" />
 
@@ -46,7 +41,7 @@
         android:layout_height="21dp"
         android:layout_marginStart="109dp"
         android:layout_marginLeft="109dp"
-        android:layout_marginTop="148dp"
+        android:layout_marginTop="32dp"
         android:layout_marginEnd="109dp"
         android:layout_marginRight="109dp"
         android:text="@string/string_conversor"
@@ -57,13 +52,25 @@
 
     <Button
         android:id="@+id/button3"
-        android:layout_width="213dp"
+        android:layout_width="0dp"
         android:layout_height="95dp"
-        android:layout_marginTop="16dp"
         android:onClick="voltar"
         android:text="@string/btn_voltar"
         android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="@+id/button2"
-        app:layout_constraintStart_toStartOf="@+id/button2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button2" />
+
+    <TextView
+        android:id="@+id/resultado"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="176dp"
+        android:layout_marginLeft="176dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="235dp"
+        android:layout_marginRight="235dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button3" />
 </android.support.constraint.ConstraintLayout>
