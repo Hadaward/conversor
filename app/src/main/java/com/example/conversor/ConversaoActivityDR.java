@@ -5,8 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
-
-
+import java.text.DecimalFormat;
 
 public class ConversaoActivityDR extends AppCompatActivity {
     private double dolarValue = 3.83;
@@ -22,8 +21,9 @@ public class ConversaoActivityDR extends AppCompatActivity {
     public void sendMessage(View view){
         Intent calc = new Intent(ConversaoActivityDR.this,Resultado.class);
         EditText real = findViewById(R.id.dolarToReal);
-        Double calculo = Double.valueOf(real.getText().toString())*dolarValue;
-        String dinheiro = "R$"+String.valueOf(calculo);
+        Double calculo = Math.ceil(Double.valueOf(real.getText().toString())*dolarValue);
+        DecimalFormat fmt = new DecimalFormat("0.00");
+        String dinheiro = "R$"+String.valueOf(fmt.format(calculo));
         calc.putExtra("calc",dinheiro);
         startActivity(calc);
     }

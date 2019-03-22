@@ -5,12 +5,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.TextView;
+import java.text.DecimalFormat;
 
-import java.math.BigDecimal;
-import java.math.RoundingMode;
-import java.text.NumberFormat;
-import java.util.Locale;
 
 public class ConversaoActivityRD extends AppCompatActivity {
     private double dolarValue = 3.83;
@@ -26,7 +22,8 @@ public class ConversaoActivityRD extends AppCompatActivity {
         Intent calc = new Intent(ConversaoActivityRD.this,Resultado.class);
         EditText real = findViewById(R.id.realToDolar);
         Double calculo = Double.valueOf(real.getText().toString())/dolarValue;
-        String dinheiro = "US$"+String.valueOf(calculo);
+        DecimalFormat fmt = new DecimalFormat("0.00");
+        String dinheiro = "US$"+String.valueOf(fmt.format(calculo));
         calc.putExtra("calc",dinheiro);
         startActivity(calc);
     }
